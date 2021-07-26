@@ -23,7 +23,9 @@ function App() {
   ) : (
     <div>
       <div className="header">
-        <img src={logo} alt="logo deliveroo" />
+        <div className="wrapper">
+          <img src={logo} alt="logo deliveroo" />
+        </div>
       </div>
       <div className="sous-header">
         <div>
@@ -32,33 +34,50 @@ function App() {
         </div>
         <img src={data.restaurant.picture} alt={data.restaurant.name} />
       </div>
-      <div className="categories">
-        {data.categories
-          .splice(data.categories.length - 6)
-          .map((category, index) => {
-            return (
-              <div key={index} className="category">
-                <h3>{category.name}</h3>
-                <div className="meals">
-                  {category.meals.map((meal) => {
-                    return (
-                      <div key={meal.id} className="meal">
-                        <h4>{meal.title}</h4>
-                        {meal.description ? <p>{meal.description}</p> : <p></p>}
-                        {meal.picture ? (
-                          <img src={meal.picture} alt={meal.title} />
-                        ) : (
-                          <p></p>
-                        )}
-                        <p>{meal.price}</p>
-                        {meal.popular ? <p>Populaire</p> : <div></div>}
-                      </div>
-                    );
-                  })}
+      <div className="wrapper">
+        <div className="categories">
+          {data.categories
+            .splice(data.categories.length - 6)
+            .map((category, index) => {
+              return (
+                <div key={index} className="category">
+                  <h3>{category.name}</h3>
+                  <div className="meals">
+                    {category.meals.map((meal) => {
+                      return (
+                        <div key={meal.id} className="meal">
+                          <div className="details">
+                            <h4>{meal.title}</h4>
+                            {meal.description ? (
+                              <p className="meal-description">
+                                {meal.description}
+                              </p>
+                            ) : (
+                              <p></p>
+                            )}
+                            <div className="price">
+                              <p>{meal.price.replace(".", ",")} €</p>
+                              {meal.popular ? (
+                                <span>Populaire</span>
+                              ) : (
+                                <div></div>
+                              )}
+                            </div>
+                          </div>
+
+                          {meal.picture ? (
+                            <img src={meal.picture} alt={meal.title} />
+                          ) : (
+                            <p></p>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+        </div>
       </div>
     </div>
   );
