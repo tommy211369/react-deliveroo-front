@@ -20,6 +20,12 @@ function App() {
         );
         // http://localhost:3200/
         // "https://react-deliveroo-project.herokuapp.com/";
+
+        // remove empty categories
+        const DATA = response.data.categories.splice(
+          response.data.categories.length - 6
+        );
+        console.log("New data : ", DATA);
         setData(response.data);
         console.log(data);
         setIsLoading(false);
