@@ -3,7 +3,7 @@ import React from "react";
 const SousHeader = ({ data }) => {
   return (
     <div className="sous-header">
-      <div className="wrapper">
+      <div className="container">
         <div>
           <h2>{data.restaurant.name}</h2>
           <p>{data.restaurant.description}</p>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import SousHeader from "./components/SousHeader";
 import Categories from "./components/Categories";
+import Basket from "./components/Basket";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
@@ -46,6 +47,7 @@ function App() {
 
       <div className="wrapper">
         <Categories data={data} />
+        <Basket />
       </div>
     </div>
   );
