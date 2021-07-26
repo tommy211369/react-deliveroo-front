@@ -6,7 +6,7 @@ const Categories = ({ data }) => {
   return (
     <div className="categories">
       {data.categories
-        .splice(data.categories.length - 6)
+        .splice(data.categories[0], data.categories.length - 6)
         .map((category, index) => {
           return <Category category={category} index={index} />;
         })}
