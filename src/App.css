@@ -6,6 +6,11 @@ body {
   background-color: #f3f5f5;
 }
 
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 /* HEADER */
 .header {
   background-color: white;
