@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://react-deliveroo-project.herokuapp.com//"
+        "https://react-deliveroo-project.herokuapp.com/"
       );
       setData(response.data);
       console.log(data);
