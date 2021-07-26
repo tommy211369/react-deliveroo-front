@@ -65,6 +65,7 @@ img {
 /* CATEGORIES*/
 .categories {
   max-width: 820px;
+  margin-top: 30px;
 }
 
 h3 {
@@ -127,6 +128,15 @@ h4 {
   width: 70px;
   font-weight: 300;
   color: #868a8a;
+}
+
+.popular {
+  display: flex;
+  font-size: 12px;
+  color: #ff8000;
+  width: 75px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .meal img {

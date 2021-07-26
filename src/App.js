@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import logo from "./img/logo-deliveroo.png";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./App.css";
 import axios from "axios";
+library.add(faStar);
 
 function App() {
   const [data, setData] = useState({});
@@ -58,7 +62,10 @@ function App() {
                             <div className="price">
                               <p>{meal.price.replace(".", ",")} €</p>
                               {meal.popular ? (
-                                <span>Populaire</span>
+                                <div className="popular">
+                                  <FontAwesomeIcon icon="star" />
+                                  <span>Populaire</span>
+                                </div>
                               ) : (
                                 <div></div>
                               )}
