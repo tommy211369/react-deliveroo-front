@@ -14,14 +14,16 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3200/");
+      const response = await axios.get(
+        "https://react-deliveroo-project.herokuapp.com//"
+      );
       setData(response.data);
       console.log(data);
       setIsLoading(false);
     };
 
     fetchData();
-  }, []);
+  });
 
   return isLoading ? (
     <span>En cours de chargement ...</span>
