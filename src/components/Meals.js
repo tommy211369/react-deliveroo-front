@@ -5,7 +5,7 @@ const Meals = ({ category }) => {
   return (
     <div className="meals">
       {category.meals.map((meal) => {
-        return <Meal meal={meal} />;
+        return <Meal meal={meal} key={meal.id} />;
       })}
     </div>
   );

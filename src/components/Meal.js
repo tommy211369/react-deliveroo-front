@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Meal = ({ meal }) => {
   return (
-    <div key={meal.id} className="meal">
+    <div className="meal">
       <div className="details">
         <h4>{meal.title}</h4>
         {meal.description ? (
