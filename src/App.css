@@ -1,1 +1,15 @@
 /* Other rules */
+
+.sous-header img {
+  width: 350px;
+  height: 197px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 5px;
+}
