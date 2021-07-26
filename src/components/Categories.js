@@ -1,5 +1,4 @@
 import React from "react";
-
 import Category from "./Category";
 
 const Categories = ({ data }) => {
@@ -8,7 +7,7 @@ const Categories = ({ data }) => {
       {data.categories
         .splice(data.categories[0], data.categories.length - 6)
         .map((category, index) => {
-          return <Category category={category} index={index} />;
+          return <Category key={index} category={category} />;
         })}
     </div>
   );

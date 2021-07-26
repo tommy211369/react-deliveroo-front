@@ -14,12 +14,18 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        "https://react-deliveroo-project.herokuapp.com/"
-      );
-      setData(response.data);
-      console.log(data);
-      setIsLoading(false);
+      try {
+        const response = await axios.get(
+          "https://react-deliveroo-project.herokuapp.com/"
+        );
+        // http://localhost:3200/
+        // "https://react-deliveroo-project.herokuapp.com/";
+        setData(response.data);
+        console.log(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.messages);
+      }
     };
 
     fetchData();
