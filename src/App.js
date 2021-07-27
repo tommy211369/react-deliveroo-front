@@ -54,7 +54,7 @@ function App() {
       <SousHeader data={data} />
 
       <div className="wrapper">
-        <Categories data={data} setBasket={setBasket} basket={basket} />
+        <Categories data={data} basket={basket} setBasket={setBasket} />
         <Basket basket={basket} setBasket={setBasket} />
       </div>
     </div>

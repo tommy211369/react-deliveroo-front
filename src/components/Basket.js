@@ -17,12 +17,33 @@ const Basket = ({ basket, setBasket }) => {
 
           {basket.map((meal, index) => {
             return (
-              <div key={index} className="meal-details">
-                <span>-</span>
-                <span>{meal.quantity}</span>
-                <span>+</span>
-                <p>{meal.name}</p>
-                <span>{meal.price} €</span>
+              <div className="cart-meals">
+                <div className="counter">
+                  <button
+                    onClick={() => {
+                      const newBasket = [...basket];
+                      newBasket[index].quantity--;
+                      setBasket(newBasket);
+                    }}
+                  >
+                    -
+                  </button>
+                  <span>{meal.quantity}</span>
+                  <button
+                    onClick={() => {
+                      const newBasket = [...basket];
+                      newBasket[index].quantity++;
+                      setBasket(newBasket);
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
+
+                <div key={index} className="cart-meal-details">
+                  <p>{meal.name}</p>
+                  <span>{meal.price} €</span>
+                </div>
               </div>
             );
           })}

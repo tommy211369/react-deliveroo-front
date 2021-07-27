@@ -2,21 +2,20 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Meal = ({ meal, setBasket, basket }) => {
-  const handleAddBasket = (index) => {
-    let newBasket = [...basket];
+  const handleAddBasket = () => {
+    const newBasket = [...basket];
 
-    if (newBasket.indexOf(index) === -1) {
-      newBasket.push({
-        name: meal.title,
-        price: meal.price,
-        quantity: 1,
-      });
-      setBasket(newBasket);
-    }
+    newBasket.push({
+      id: meal.id,
+      name: meal.title,
+      price: meal.price,
+      quantity: 1,
+    });
+    setBasket(newBasket);
   };
 
   return (
-    <div className="meal" onClick={() => handleAddBasket(meal.id)}>
+    <div className="meal" onClick={handleAddBasket}>
       <div className="details">
         <h4>{meal.title}</h4>
         {meal.description ? (
