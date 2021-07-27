@@ -1,22 +1,22 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Meal = ({ meal, setBasket, basket }) => {
+const Meal = ({ meal, cart, setCart }) => {
   const handleAddBasket = () => {
-    const newBasket = { ...basket };
+    const newCart = { ...cart };
 
     // si le meal n'est pas déjà présent, on l'ajoute au panier
-    if (newBasket.idList.indexOf(meal.id) === -1) {
-      newBasket.idList.push(meal.id);
-      newBasket.meals[meal.id] = {
+    if (newCart.idList.indexOf(meal.id) === -1) {
+      newCart.idList.push(meal.id);
+      newCart.meals[meal.id] = {
         name: meal.title,
         price: meal.price,
         quantity: 1,
       };
-      setBasket(newBasket);
+      setCart(newCart);
     } else {
-      newBasket.meals[meal.id].quantity++;
-      setBasket(newBasket);
+      newCart.meals[meal.id].quantity++;
+      setCart(newCart);
     }
   };
 

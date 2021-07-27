@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import SousHeader from "./components/SousHeader";
 import Categories from "./components/Categories";
-import Basket from "./components/Basket";
+import Cart from "./components/Cart";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -14,7 +14,7 @@ function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   // tablau d'objets pour le panier
-  const [basket, setBasket] = useState({ meals: {}, idList: [] });
+  const [cart, setCart] = useState({ meals: {}, idList: [] });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,8 +54,8 @@ function App() {
       <SousHeader data={data} />
 
       <div className="wrapper">
-        <Categories data={data} basket={basket} setBasket={setBasket} />
-        <Basket basket={basket} setBasket={setBasket} />
+        <Categories data={data} cart={cart} setCart={setCart} />
+        <Cart cart={cart} setCart={setCart} />
       </div>
     </div>
   );

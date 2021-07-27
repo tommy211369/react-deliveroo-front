@@ -1,7 +1,7 @@
 import React from "react";
 import Category from "./Category";
 
-const Categories = ({ data, setBasket, basket }) => {
+const Categories = ({ data, cart, setCart }) => {
   return (
     <div className="categories">
       {data.categories.map((category, index) => {
@@ -9,8 +9,8 @@ const Categories = ({ data, setBasket, basket }) => {
           <Category
             key={index}
             category={category}
-            setBasket={setBasket}
-            basket={basket}
+            cart={cart}
+            setCart={setCart}
           />
         );
       })}
