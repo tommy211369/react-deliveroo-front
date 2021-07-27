@@ -7,14 +7,10 @@ const Meal = ({ meal, setBasket, basket }) => {
 
     if (newBasket.indexOf(index) === -1) {
       newBasket.push({
-        id: meal.id,
         name: meal.title,
         price: meal.price,
-        counter: 1,
+        quantity: 1,
       });
-      setBasket(newBasket);
-    } else {
-      newBasket[index][meal.counter]++;
       setBasket(newBasket);
     }
   };
