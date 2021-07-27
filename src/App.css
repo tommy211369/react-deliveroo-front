@@ -63,6 +63,14 @@ img {
   display: none;
   font-size: 25px;
   color: #24cdbd;
+  padding: 7px;
+  border-radius: 20px;
+}
+
+.cart-menu:hover {
+  cursor: pointer;
+
+  background-color: rgba(36, 205, 189, 0.2);
 }
 
 /* SOUS-HEADER */

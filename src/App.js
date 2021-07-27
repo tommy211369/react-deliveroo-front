@@ -19,7 +19,7 @@ function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [cart, setCart] = useState({ meals: {}, idList: [] });
-  const [totalQuantity, setTotalQuantity] = useState(0);
+  const [displayCart, setDisplayCart] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,7 +55,12 @@ function App() {
     </div>
   ) : (
     <div>
-      <Header cart={cart} />
+      <Header
+        cart={cart}
+        displayCart={displayCart}
+        setDisplayCart={setDisplayCart}
+        setCart={setCart}
+      />
       <SousHeader data={data} />
 
       <div className="wrapper">
