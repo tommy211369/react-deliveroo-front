@@ -19,6 +19,7 @@ function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [cart, setCart] = useState({ meals: {}, idList: [] });
+  const [totalQuantity, setTotalQuantity] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {

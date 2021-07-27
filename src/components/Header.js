@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../img/logo-deliveroo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = ({ cart }) => {
+const Header = ({ cart, totalQuantity }) => {
   return (
     <div className="header">
       <div className="container">
