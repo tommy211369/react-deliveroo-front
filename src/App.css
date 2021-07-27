@@ -185,6 +185,7 @@ h4 {
   height: max-content;
   border-radius: 5px;
   padding: 10px;
+  color: #2e3333;
 }
 
 .valid {
@@ -199,6 +200,12 @@ h4 {
 .valid-on {
   background-color: #24cdbd;
   color: white;
+  transition: background-color 0.2s ease;
+}
+
+.valid-on:hover {
+  cursor: pointer;
+  background-color: #90f4ea;
 }
 
 .valid-off {
@@ -217,6 +224,18 @@ h4 {
   display: flex;
   justify-content: space-between;
   margin-right: 10px;
+}
+
+.counter-icon {
+  color: #24cdbd;
+}
+
+.counter-icon:hover {
+  cursor: pointer;
+}
+
+.quantity {
+  color: #808484;
 }
 
 .cart-meals {
@@ -241,4 +260,9 @@ h4 {
 .total,
 .taxes-sous-total {
   border-top: 1px solid grey;
+}
+
+.total {
+  font-size: 19px;
+  font-weight: bold;
 }

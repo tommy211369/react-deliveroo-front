@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Cart = ({ cart, setCart }) => {
   let total = 0;
@@ -21,7 +22,7 @@ const Cart = ({ cart, setCart }) => {
             return (
               <div key={index} className="cart-meals">
                 <div className="counter">
-                  <button
+                  <span
                     onClick={() => {
                       const newCart = { ...cart };
                       newCart.meals[id].quantity--;
@@ -34,18 +35,24 @@ const Cart = ({ cart, setCart }) => {
                       setCart(newCart);
                     }}
                   >
-                    -
-                  </button>
-                  <span>{cart.meals[id].quantity}</span>
-                  <button
+                    <FontAwesomeIcon
+                      icon="minus-circle"
+                      className="counter-icon"
+                    />
+                  </span>
+                  <span className="quantity">{cart.meals[id].quantity}</span>
+                  <span
                     onClick={() => {
                       const newCart = { ...cart };
                       newCart.meals[id].quantity++;
                       setCart(newCart);
                     }}
                   >
-                    +
-                  </button>
+                    <FontAwesomeIcon
+                      icon="plus-circle"
+                      className="counter-icon"
+                    />
+                  </span>
                 </div>
 
                 <div className="cart-meal-details">

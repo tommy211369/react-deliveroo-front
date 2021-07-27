@@ -4,11 +4,15 @@ import SousHeader from "./components/SousHeader";
 import Categories from "./components/Categories";
 import Cart from "./components/Cart";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faPlusCircle,
+  faMinusCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import "./App.css";
 import axios from "axios";
-library.add(faStar);
+library.add(faStar, faPlusCircle, faMinusCircle);
 
 function App() {
   const [data, setData] = useState({});
