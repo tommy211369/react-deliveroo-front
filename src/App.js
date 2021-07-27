@@ -8,11 +8,12 @@ import {
   faStar,
   faPlusCircle,
   faMinusCircle,
+  faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import "./App.css";
 import axios from "axios";
-library.add(faStar, faPlusCircle, faMinusCircle);
+library.add(faStar, faPlusCircle, faMinusCircle, faShoppingCart);
 
 function App() {
   const [data, setData] = useState({});
@@ -53,7 +54,7 @@ function App() {
     </div>
   ) : (
     <div>
-      <Header />
+      <Header cart={cart} />
       <SousHeader data={data} />
 
       <div className="wrapper">
