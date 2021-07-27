@@ -319,8 +319,8 @@ h4 {
     display: block;
   }
 
-  .sous-header,
-  .header {
+  .header,
+  .sous-header {
     padding: 0 20px;
   }
 
@@ -335,7 +335,7 @@ h4 {
 
   .sous-header div {
     text-align: center;
-    margin-top: 20px;
+    margin: 20px auto 0 auto;
     width: 100%;
   }
 
