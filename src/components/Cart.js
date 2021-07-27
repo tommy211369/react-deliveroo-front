@@ -3,7 +3,7 @@ import React from "react";
 const Cart = ({ cart, setCart }) => {
   let total = 0;
 
-  // transforme le tableau en objet
+  // change object into array
   const meals = Object.keys(cart.meals);
   console.log("meals array : ", meals);
 
@@ -56,7 +56,7 @@ const Cart = ({ cart, setCart }) => {
             );
           })}
 
-          {/* SOUS TOTAL & FRAIS */}
+          {/* SUBTOTAL & SHIPPING COST*/}
           <div className="taxes-sous-total">
             <div>
               <p>Sous-total</p>

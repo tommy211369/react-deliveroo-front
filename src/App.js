@@ -13,7 +13,6 @@ library.add(faStar);
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  // tablau d'objets pour le panier
   const [cart, setCart] = useState({ meals: {}, idList: [] });
 
   useEffect(() => {
