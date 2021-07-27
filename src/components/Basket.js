@@ -3,46 +3,56 @@ import React, { useState, useEffect } from "react";
 const Basket = ({ basket, setBasket }) => {
   let total = 0;
 
-  for (let i = 0; i < basket.length; i++) {
-    console.log("type of newPrice : ", typeof newPrice);
-    total += Number(basket[i].price * basket[i].quantity);
-    console.log("Type of newTotal : ", typeof newTotal);
+  // transforme le tableau en objet
+  const meals = Object.keys(basket.meals);
+  console.log("meals array : ", meals);
+
+  for (let i = 0; i < meals.length; i++) {
+    total += Number(
+      basket.meals[meals[i]].price * basket.meals[meals[i]].quantity
+    );
   }
 
   return (
     <div className="basket">
-      {basket.length > 0 ? (
+      {basket.idList.length > 0 ? (
         <div className="basket-on">
           <div className="valid valid-on">Valider votre panier</div>
 
-          {basket.map((meal, index) => {
+          {basket.idList.map((id, index) => {
             return (
-              <div className="cart-meals">
+              <div key={index} className="cart-meals">
                 <div className="counter">
                   <button
                     onClick={() => {
-                      const newBasket = [...basket];
-                      newBasket[index].quantity--;
-                      setBasket(newBasket);
+                      const newBaskets = { ...basket };
+                      newBaskets.meals[id].quantity--;
+
+                      if (newBaskets.meals[id].quantity === 0) {
+                        newBaskets.idList.splice(newBaskets.idList[index], 1);
+                        delete newBaskets.meals[id];
+                      }
+
+                      setBasket(newBaskets);
                     }}
                   >
                     -
                   </button>
-                  <span>{meal.quantity}</span>
+                  <span>{basket.meals[id].quantity}</span>
                   <button
                     onClick={() => {
-                      const newBasket = [...basket];
-                      newBasket[index].quantity++;
-                      setBasket(newBasket);
+                      const newBaskets = { ...basket };
+                      newBaskets.meals[id].quantity++;
+                      setBasket(newBaskets);
                     }}
                   >
                     +
                   </button>
                 </div>
 
-                <div key={index} className="cart-meal-details">
-                  <p>{meal.name}</p>
-                  <span>{meal.price} €</span>
+                <div className="cart-meal-details">
+                  <p>{basket.meals[id].name}</p>
+                  <span>{basket.meals[id].price} €</span>
                 </div>
               </div>
             );

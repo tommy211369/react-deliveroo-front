@@ -3,15 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Meal = ({ meal, setBasket, basket }) => {
   const handleAddBasket = () => {
-    const newBasket = [...basket];
+    const newBasket = { ...basket };
 
-    newBasket.push({
-      id: meal.id,
-      name: meal.title,
-      price: meal.price,
-      quantity: 1,
-    });
-    setBasket(newBasket);
+    // si le meal n'est pas déjà présent, on l'ajoute au panier
+    if (newBasket.idList.indexOf(meal.id) === -1) {
+      newBasket.idList.push(meal.id);
+      newBasket.meals[meal.id] = {
+        name: meal.title,
+        price: meal.price,
+        quantity: 1,
+      };
+      setBasket(newBasket);
+    } else {
+      newBasket.meals[meal.id].quantity++;
+      setBasket(newBasket);
+    }
   };
 
   return (

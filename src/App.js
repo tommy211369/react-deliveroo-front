@@ -14,7 +14,7 @@ function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   // tablau d'objets pour le panier
-  const [basket, setBasket] = useState([]);
+  const [basket, setBasket] = useState({ meals: {}, idList: [] });
 
   useEffect(() => {
     const fetchData = async () => {
