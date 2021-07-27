@@ -168,28 +168,64 @@ h4 {
 /* BASKET */
 .basket {
   margin-top: 30px;
-  padding: 10px;
   width: 350px;
-  height: 185px;
-  background-color: white;
-  border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
 
+.basket-off {
+  background-color: white;
+  height: 185px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.basket-on {
+  background-color: white;
+  height: max-content;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .valid {
   width: 100%;
-  background-color: #c6c6c6;
   text-align: center;
   line-height: 50px;
   border-radius: 5px;
   font-size: 16px;
-  color: #8b9a9b;
   font-weight: bold;
+}
+
+.valid-on {
+  background-color: #24cdbd;
+  color: white;
+}
+
+.valid-off {
+  background-color: #c6c6c6;
+  color: #8b9a9b;
 }
 
 .empty-basket {
   color: #868a8a;
   text-align: center;
   margin-top: 50px;
+}
+
+.meal-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taxes-sous-total div,
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total,
+.taxes-sous-total {
+  border-top: 1px solid grey;
 }

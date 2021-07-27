@@ -13,6 +13,8 @@ library.add(faStar);
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  // tablau d'objets pour le panier
+  const [basket, setBasket] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,9 +29,11 @@ function App() {
         const DATA = response.data.categories.splice(
           response.data.categories.length - 6
         );
-        console.log("New data : ", DATA);
+        console.log("Removed datas : ", DATA);
+
+        // data updated
         setData(response.data);
-        console.log(data);
+        console.log("data : ", data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.messages);
@@ -37,7 +41,7 @@ function App() {
     };
 
     fetchData();
-  });
+  }, []);
 
   return isLoading ? (
     <div className="loading">
@@ -50,8 +54,8 @@ function App() {
       <SousHeader data={data} />
 
       <div className="wrapper">
-        <Categories data={data} />
-        <Basket />
+        <Categories data={data} setBasket={setBasket} basket={basket} />
+        <Basket basket={basket} setBasket={setBasket} />
       </div>
     </div>
   );
