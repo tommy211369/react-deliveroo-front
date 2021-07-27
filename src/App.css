@@ -12,6 +12,15 @@ body {
   margin: 0 auto;
 }
 
+.loading {
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  align-items: center;
+  margin: 200px auto;
+  justify-content: space-between;
+}
+
 /* HEADER */
 .header {
   background-color: white;

@@ -5,6 +5,7 @@ import Categories from "./components/Categories";
 import Basket from "./components/Basket";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import "./App.css";
 import axios from "axios";
 library.add(faStar);
@@ -39,7 +40,10 @@ function App() {
   });
 
   return isLoading ? (
-    <span>En cours de chargement ...</span>
+    <div className="loading">
+      <CircularProgress />
+      <span>Récupération des données...</span>
+    </div>
   ) : (
     <div>
       <Header />
