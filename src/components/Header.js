@@ -3,13 +3,22 @@ import logo from "../img/logo-deliveroo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = ({ cart, displayCart, setDisplayCart }) => {
-  const arrayCart = Object.keys(cart);
+  const cartArray = Object.keys(cart);
+
+  const newCart = { ...cart };
+
+  let totalQuantity = 0;
+
+  for (let i = 0; i < cartArray.length; i++) {
+    totalQuantity += Number(newCart[cartArray[i]].quantity);
+  }
+
   return (
     <div className="header">
       <div className="container">
         <img src={logo} alt="logo deliveroo" />
         <div className="header-cart">
-          {arrayCart.length > 0 && <span>{arrayCart.length}</span>}
+          {totalQuantity > 0 && <span>{totalQuantity}</span>}
           <FontAwesomeIcon icon="shopping-cart" className="cart-menu" />
         </div>
       </div>
