@@ -22,13 +22,14 @@ const Cart = ({ cart, setCart }) => {
         <div className="basket-on">
           <div className="valid valid-on">Valider votre panier</div>
 
+          {/* array of ids */}
           {cartArray.map((mealId, id) => {
             return (
               <div key={id} className="cart-meals">
                 <div className="counter">
                   <span
                     onClick={() => {
-                      const newCart = { ...cart };
+                      const newCart = { ...cart }; // copy of cart (meal objects)
 
                       newCart[mealId].quantity--;
                       if (newCart[mealId].quantity === 0) {
