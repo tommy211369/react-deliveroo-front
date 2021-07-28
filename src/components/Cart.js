@@ -5,31 +5,35 @@ const Cart = ({ cart, setCart }) => {
   let total = 0;
 
   // change object into array
-  const meals = Object.keys(cart.meals);
-  console.log("meals array : ", meals);
+  const cartArray = Object.keys(cart); // array of cart keys (ids)
+  const newCart = { ...cart }; // copy of cart (meal objects)
 
-  for (let i = 0; i < meals.length; i++) {
-    total += Number(cart.meals[meals[i]].price * cart.meals[meals[i]].quantity);
+  for (let i = 0; i < cartArray.length; i++) {
+    console.log(cartArray[i]); // one id
+    // newCart[cartArray[i]] : one meal
+    total += Number(
+      newCart[cartArray[i]].price * newCart[cartArray[i]].quantity
+    );
   }
 
   return (
     <div className="basket">
-      {cart.idList.length > 0 ? (
+      {cartArray.length > 0 ? (
         <div className="basket-on">
           <div className="valid valid-on">Valider votre panier</div>
 
-          {cart.idList.map((id, index) => {
+          {cartArray.map((mealId, id) => {
             return (
-              <div key={index} className="cart-meals">
+              <div key={id} className="cart-meals">
                 <div className="counter">
                   <span
                     onClick={() => {
                       const newCart = { ...cart };
-                      newCart.meals[id].quantity--;
 
-                      if (newCart.meals[id].quantity === 0) {
-                        newCart.idList.splice(newCart.idList[index], 1);
-                        delete newCart.meals[id];
+                      newCart[mealId].quantity--;
+                      if (newCart[mealId].quantity === 0) {
+                        cartArray.splice(id, 1);
+                        delete newCart[mealId];
                       }
 
                       setCart(newCart);
@@ -40,11 +44,13 @@ const Cart = ({ cart, setCart }) => {
                       className="counter-icon"
                     />
                   </span>
-                  <span className="quantity">{cart.meals[id].quantity}</span>
+
+                  <span className="quantity">{newCart[mealId].quantity}</span>
+
                   <span
                     onClick={() => {
                       const newCart = { ...cart };
-                      newCart.meals[id].quantity++;
+                      newCart[mealId].quantity++;
                       setCart(newCart);
                     }}
                   >
@@ -56,8 +62,8 @@ const Cart = ({ cart, setCart }) => {
                 </div>
 
                 <div className="cart-meal-details">
-                  <p>{cart.meals[id].name}</p>
-                  <span>{cart.meals[id].price} €</span>
+                  <p>{newCart[mealId].name}</p>
+                  <span>{newCart[mealId].price} €</span>
                 </div>
               </div>
             );

@@ -18,7 +18,7 @@ library.add(faStar, faPlusCircle, faMinusCircle, faShoppingCart);
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [cart, setCart] = useState({ meals: {}, idList: [] });
+  const [cart, setCart] = useState({});
   const [displayCart, setDisplayCart] = useState(false);
 
   useEffect(() => {

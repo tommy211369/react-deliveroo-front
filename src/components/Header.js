@@ -8,7 +8,7 @@ const Header = ({ cart, setCart, displayCart, setDisplayCart }) => {
       <div className="container">
         <img src={logo} alt="logo deliveroo" />
         <div className="header-cart">
-          {cart.idList.length > 0 && <span>{cart.idList.length}</span>}
+          {cart.length > 0 && <span>{cart.length}</span>}
           <FontAwesomeIcon icon="shopping-cart" className="cart-menu" />
         </div>
       </div>
