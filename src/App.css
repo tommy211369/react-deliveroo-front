@@ -69,8 +69,21 @@ img {
 
 .cart-menu:hover {
   cursor: pointer;
-
   background-color: rgba(36, 205, 189, 0.2);
+}
+
+.basket-header {
+  visibility: hidden;
+  position: absolute;
+  top: 45px;
+  right: 15px;
+  min-width: 45%;
+  border: 2px solid #24cdbd;
+  border-radius: 7px;
+}
+
+.basket-header span {
+  color: #2e3333;
 }
 
 /* SOUS-HEADER */
@@ -322,6 +335,10 @@ h4 {
 }
 
 @media (max-width: 1080px) {
+  .basket-header {
+    visibility: visible;
+  }
+
   .basket {
     display: none;
   }
