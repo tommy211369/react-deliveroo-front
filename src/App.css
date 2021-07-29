@@ -404,9 +404,23 @@ h4 {
     transition: all 0.3s ease;
   }
 
+  @media (max-width: 425px) {
+    .basket-header {
+      width: 100%;
+      right: 0;
+    }
+  }
+
   @media (max-width: 375px) {
     .sous-header img {
       max-width: 100%;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .basket-header {
+      width: 100%;
+      right: -4px;
     }
   }
 }
